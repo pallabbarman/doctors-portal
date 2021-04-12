@@ -5,6 +5,7 @@ import {
     faGripHorizontal,
     faSignOutAlt,
     faUsers,
+    faUserPlus,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
@@ -18,23 +19,28 @@ const Sidebar = () => (
     >
         <ul className="list-unstyled">
             <li>
-                <Link to="/doctor/dashboard" className="text-white">
+                <Link to="/dashboard" className="text-white">
                     <FontAwesomeIcon icon={faGripHorizontal} /> <span>Dashboard</span>
                 </Link>
             </li>
             <li>
-                <Link to="/doctor/appointment" className="text-white">
+                <Link to="/appointment" className="text-white">
                     <FontAwesomeIcon icon={faCalendar} /> <span>Appointment</span>
                 </Link>
             </li>
             <li>
-                <Link to="/doctor/patients" className="text-white">
+                <Link to="/allPatients" className="text-white">
                     <FontAwesomeIcon icon={faUsers} /> <span>Patients</span>
                 </Link>
             </li>
             <li>
-                <Link to="/doctor/prescriptions" className="text-white">
+                <Link to="/prescriptions" className="text-white">
                     <FontAwesomeIcon icon={faFileAlt} /> <span>Prescriptions</span>
+                </Link>
+            </li>
+            <li>
+                <Link to="/addDoctor" className="text-white">
+                    <FontAwesomeIcon icon={faUserPlus} /> <span>Add Doctor</span>
                 </Link>
             </li>
             <li>

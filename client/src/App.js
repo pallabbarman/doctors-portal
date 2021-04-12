@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { createContext, useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
+import AddDoctor from './components/AddDoctor/AddDoctor';
 import AllPatients from './components/AllPatients/AllPatients';
 import Appointment from './components/Appointment/Appointment/Appointment';
 import Dashboard from './components/Dashboard/Dashboard/Dashboard';
@@ -22,14 +23,17 @@ function App() {
                     <Route path="/appointment">
                         <Appointment />
                     </Route>
-                    <Route path="/dashboard/appointment">
+                    <Route path="/dashboard">
                         <Dashboard />
                     </Route>
-                    <Route path="/dashboard/allPatients">
+                    <Route path="/allPatients">
                         <AllPatients />
                     </Route>
                     <Route path="/login">
                         <Login />
+                    </Route>
+                    <Route path="/addDoctor">
+                        <AddDoctor />
                     </Route>
                 </Switch>
             </Router>
