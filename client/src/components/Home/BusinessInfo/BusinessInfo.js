@@ -29,7 +29,7 @@ const BusinessInfo = () => (
         <Container className="d-flex justify-content-center">
             <Row className="w-75">
                 {infosData.map((info) => (
-                    <InfoCard info={info} />
+                    <InfoCard info={info} key={info.title} />
                 ))}
             </Row>
         </Container>

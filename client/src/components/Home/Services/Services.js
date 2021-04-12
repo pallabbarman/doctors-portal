@@ -30,7 +30,7 @@ const Services = () => (
         <div className="d-flex justify-content-center">
             <Row className="mt-5">
                 {servicesData.map((services) => (
-                    <ServicesDetail services={services} />
+                    <ServicesDetail services={services} key={services.name} />
                 ))}
             </Row>
         </div>

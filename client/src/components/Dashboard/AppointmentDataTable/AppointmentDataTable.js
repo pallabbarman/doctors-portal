@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import React from 'react';
 
 const AppointmentDataTable = (props) => {
@@ -31,7 +32,7 @@ const AppointmentDataTable = (props) => {
             </thead>
             <tbody>
                 {appointments.map((appointment, index) => (
-                    <tr>
+                    <tr key={appointment._id}>
                         <td>{index + 1}</td>
                         <td>{appointment.name}</td>
                         <td>{appointment.gender}</td>
