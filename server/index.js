@@ -34,8 +34,15 @@ client.connect(() => {
 
     app.post('/appointmentsByDate', (req, res) => {
         const date = req.body;
-        appointmentCollection.find({ date: date.date }).toArray((err, documents) => {
-            res.send(documents);
+        const { email } = req.body;
+        doctorCollection.find({ email }).toArray((err, documents) => {
+            const filter = { date: date.date };
+            if (documents.length === 0) {
+                filter.email = email;
+            }
+            appointmentCollection.find(filter).toArray((error, doc) => {
+                res.send(doc);
+            });
         });
     });
 
@@ -43,21 +50,30 @@ client.connect(() => {
         const { file } = req.files;
         const { name } = req.body;
         const { email } = req.body;
-        console.log(name, email, file);
-        file.mv(`${__dirname}/doctors/${file.name}`, (err) => {
-            if (err) {
-                console.log(err);
-                return res.status(500).send({ msg: 'Failed to upload Image' });
-            }
-            doctorCollection.insertOne({ name, email, img: file.name }).then((result) => {
-                res.send(result.insertedCount > 0);
-            });
+        const newImg = file.data;
+        const encImg = newImg.toString('base64');
+
+        const image = {
+            contentType: file.mimetype,
+            size: file.size,
+            img: Buffer.from(encImg, 'base64'),
+        };
+
+        doctorCollection.insertOne({ name, email, image }).then((result) => {
+            res.send(result.insertedCount > 0);
         });
     });
 
     app.get('/doctors', (req, res) => {
         doctorCollection.find({}).toArray((err, documents) => {
             res.send(documents);
+        });
+    });
+
+    app.post('/isDoctor', (req, res) => {
+        const { email } = req.body;
+        doctorCollection.find({ email }).toArray((err, documents) => {
+            res.send(documents.length > 0);
         });
     });
 });
