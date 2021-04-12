@@ -21,6 +21,19 @@ client.connect(() => {
             res.send(result.insertedCount > 0);
         });
     });
+
+    app.get('/appointments', (req, res) => {
+        appointmentCollection.find({}).toArray((err, documents) => {
+            res.send(documents);
+        });
+    });
+
+    app.post('/appointmentsByDate', (req, res) => {
+        const date = req.body;
+        appointmentCollection.find({ date: date.date }).toArray((err, documents) => {
+            res.send(documents);
+        });
+    });
 });
 
 app.get('/', (req, res) => {
