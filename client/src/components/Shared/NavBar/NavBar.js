@@ -5,7 +5,7 @@ const NavBar = () => (
     <div>
         <Navbar expand="lg">
             <Container>
-                <Navbar.Brand className="#home">React-Bootstrap</Navbar.Brand>
+                <Navbar.Brand className="#home">Doctors Portal</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ml-auto">
