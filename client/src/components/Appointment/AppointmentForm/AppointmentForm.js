@@ -27,7 +27,7 @@ const AppointmentForm = (props) => {
         data.service = appointmentOn;
         data.date = date;
         data.created = new Date();
-        fetch('http://localhost:5000/addAppointment', {
+        fetch('https://web-doctors-portal.herokuapp.com/addAppointment', {
             method: 'POST',
             headers: { 'Content-type': 'application/json' },
             body: JSON.stringify(data),

@@ -26,7 +26,7 @@ const AddDoctor = () => {
         formData.append('name', info.name);
         formData.append('email', info.email);
 
-        fetch('http://localhost:5000/addADoctor', {
+        fetch('https://web-doctors-portal.herokuapp.com/addADoctor', {
             method: 'POST',
             body: formData,
         })
@@ -72,10 +72,11 @@ const AddDoctor = () => {
                             </div>
                             <div className="form-group">
                                 <label htmlFor="exampleInputPassword1">Upload a image</label>
+                                <br />
                                 <input
                                     onChange={handleFileChange}
                                     type="file"
-                                    className="form-control"
+                                    className="form-label"
                                     id="exampleInputPassword1"
                                     placeholder="Picture"
                                 />
