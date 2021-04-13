@@ -17,11 +17,11 @@ Doctors portal is an appointment system for doctor and patient.
 
 ### Front-End
 
-> React is using for the front-end part.<br> > [Client Side](client/README.md)
+> React is using for the front-end part.<br> [Client Side](client/README.md)
 
 ### Back-End
 
-> NodeJs is using for the back-end part.<br> > [Server Side](server/README.md)
+> NodeJs is using for the back-end part.<br> [Server Side](server/README.md)
 
 ### How to run
 
