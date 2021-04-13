@@ -1,6 +1,6 @@
 # Doctors Portal
 
-Doctors portal is a appointment system to doctor and patient.
+Doctors portal is an appointment system for doctor and patient.
 
 ## Front Page
 
@@ -17,26 +17,28 @@ Doctors portal is a appointment system to doctor and patient.
 
 ### Front-End
 
-> React is using for the front-end part.
-> [Client Side](client/README.md)
+> React is using for the front-end part.<br> > [Client Side](client/README.md)
 
 ### Back-End
 
-> NodeJs is using for the back-end part.
-> [Server Side](server/README.md)
+> NodeJs is using for the back-end part.<br> > [Server Side](server/README.md)
 
-### Clone this project
+### How to run
+
+Please follow the below instructions to run this project in your computer:
+
+1. Clone this repository
 
 ```
-https://github.com/pallabbarman/doctors-portal.git
+git clone https://github.com/pallabbarman/doctors-portal.git
 ```
 
-Then run this command
+2. run this command
 
 ```
 npm install or yarn
 ```
 
-\*If you like this project please give a star.
+**_If you like this project, please give a star._**
 
 [Live Link](https://web-doctors-portal.web.app/).
